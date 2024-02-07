@@ -15,10 +15,10 @@ const buttonStyles = cva(
 		variants: {
 			variant: {
 				solid: "",
-				outline: "border-2",
+				outline: "border-4",
 				ghost: "transition-colors duration-300",
-				secondary: "border-2 border-primary-600",
-				secondaryGray: "border-2 ",
+				secondary: "border-4 border-primary-600",
+				secondaryGray: "border-4 ",
 				tertiary: "bg-secondary-300",
 			},
 			size: {

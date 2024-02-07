@@ -58,9 +58,9 @@ export const Tertiary: Story = {
 // 	},
 // };
 
-export const Ghost: Story = {
-	args: {
-		children: "Button CTA",
-		variant: "ghost",
-	},
-};
+// export const Ghost: Story = {
+// 	args: {
+// 		children: "Button CTA",
+// 		variant: "ghost",
+// 	},
+// };
