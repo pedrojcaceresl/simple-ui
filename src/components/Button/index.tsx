@@ -1,6 +1,6 @@
 import { cn } from "@/utils";
 import { VariantProps, cva } from "class-variance-authority";
-import { ComponentProps } from "react";
+import { ComponentProps, forwardRef } from "react";
 
 const buttonStyles = cva(
 	[
@@ -15,10 +15,10 @@ const buttonStyles = cva(
 		variants: {
 			variant: {
 				solid: "",
-				outline: "border-4",
+				outline: "border-2",
 				ghost: "transition-colors duration-300",
-				secondary: "border-4 border-primary-600",
-				secondaryGray: "border-4 ",
+				secondary: "border-2 border-primary-600",
+				secondaryGray: "border-2 ",
 				tertiary: "bg-secondary-300",
 			},
 			size: {
@@ -79,20 +79,16 @@ const buttonStyles = cva(
 
 type ButtonProps = ComponentProps<"button"> & VariantProps<typeof buttonStyles>;
 
-export const Button = ({
-	variant,
-	size,
-	colorscheme,
-	className,
-	...props
-}: ButtonProps) => {
-	return (
-		<button
-			className={cn(
-				buttonStyles({ variant, size, colorscheme, className })
-			)}
-		>
-			Button CTA
-		</button>
-	);
-};
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+	({ variant, size, colorscheme, className, ...props }, ref) => {
+		return (
+			<button
+				ref={ref}
+				className={cn(
+					buttonStyles({ variant, size, colorscheme, className })
+				)}
+				{...props}
+			/>
+		);
+	}
+);
